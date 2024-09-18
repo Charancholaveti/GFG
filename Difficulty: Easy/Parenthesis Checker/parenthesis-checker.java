@@ -31,30 +31,33 @@ class Driverclass
 // } Driver Code Ends
 
 
-//import java.util.*;
+
 class Solution
 {
     //Function to check if brackets are balanced or not.
-    static boolean ispar(String x)
+    static boolean ispar(String s)
     {
         // add your code here
         Stack<Character> st=new Stack<>();
-        for(int i=0;i<x.length();i++){
-            if(x.charAt(i)=='(' || x.charAt(i)=='{' || x.charAt(i)=='[') st.push(x.charAt(i));
+        for(int i=0;i<s.length();i++){
+            if(s.charAt(i)=='(' || s.charAt(i)=='{' || s.charAt(i)=='[') 
+               st.push(s.charAt(i));
             else{
                 if(st.isEmpty()) return false;
                 char c=st.pop();
-                if(x.charAt(i)==')'){
+                if(s.charAt(i)==')'){ 
                     if(c!='(') return false;
                 }
-                if(x.charAt(i)=='}'){
+                if(s.charAt(i)=='}'){ 
                     if(c!='{') return false;
                 }
-                if(x.charAt(i)==']'){
+                if(s.charAt(i)==']'){ 
                     if(c!='[') return false;
-                }
+                }   
             }
         }
-        return st.isEmpty();
+         if(!st.isEmpty()) return false;
+         else return true;
+        
     }
 }
