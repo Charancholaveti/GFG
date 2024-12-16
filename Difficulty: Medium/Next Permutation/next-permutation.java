@@ -10,10 +10,31 @@ import java.util.*;
 class Solution {
     void nextPermutation(int[] arr) {
         // code here
+        // int n=arr.length;
+        // int index=-1;
+        // for(int i=n-2;i>=0;i--){
+        //     if(arr[i]<arr[i+1]){
+        //         index=i;
+        //         break;
+        //     }
+        // }
+        // if(index==-1){
+        //     Arrays.sort(arr);
+        //     return;
+        // }
+        // for(int i=n-1;i>index;i--){
+        //     if(arr[i]>arr[index]){
+        //         int temp=arr[i];
+        //         arr[i]=arr[index];
+        //         arr[index]=temp;
+        //         break;
+        //     }
+        // }
+        // Arrays.sort(arr,index+1,n);
         int n=arr.length;
         int index=-1;
         for(int i=n-2;i>=0;i--){
-            if(arr[i]<arr[i+1]){
+            if(arr[i]<arr[i+1]) {
                 index=i;
                 break;
             }
@@ -24,10 +45,10 @@ class Solution {
         }
         for(int i=n-1;i>index;i--){
             if(arr[i]>arr[index]){
-                int temp=arr[i];
+               int temp=arr[i];
                 arr[i]=arr[index];
                 arr[index]=temp;
-                break;
+                break; 
             }
         }
         Arrays.sort(arr,index+1,n);
